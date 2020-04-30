@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		2CF3DD8024531A0200E961DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3DD7F24531A0200E961DC /* AppDelegate.swift */; };
 		2CF3DD8224531A0200E961DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3DD8124531A0200E961DC /* SceneDelegate.swift */; };
-		2CF3DD8424531A0200E961DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3DD8324531A0200E961DC /* ViewController.swift */; };
-		2CF3DD8724531A0200E961DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF3DD8524531A0200E961DC /* Main.storyboard */; };
 		2CF3DD8924531A0300E961DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CF3DD8824531A0300E961DC /* Assets.xcassets */; };
 		2CF3DD8C24531A0300E961DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF3DD8A24531A0300E961DC /* LaunchScreen.storyboard */; };
 		2CF3DD9724531A0300E961DC /* reddit_ios_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3DD9624531A0300E961DC /* reddit_ios_testTests.swift */; };
+		2CF3DDA8245894A700E961DC /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3DDA7245894A700E961DC /* PostListViewController.swift */; };
+		2CF3DDAA245894B000E961DC /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3DDA9245894B000E961DC /* PostListViewModel.swift */; };
+		2CF3DDAD245894C000E961DC /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3DDAC245894C000E961DC /* PostDetailViewController.swift */; };
+		2CF3DDAF245894C700E961DC /* PostDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3DDAE245894C700E961DC /* PostDetailsViewModel.swift */; };
+		2CF3DDB12458A2EC00E961DC /* PostListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF3DDB02458A2EC00E961DC /* PostListViewController.xib */; };
+		2CF3DDB3245A037E00E961DC /* PostDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF3DDB2245A037E00E961DC /* PostDetailsViewController.xib */; };
+		2CF3DDB6245B68EB00E961DC /* AppBootstrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3DDB5245B68EB00E961DC /* AppBootstrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,14 +35,19 @@
 		2CF3DD7C24531A0200E961DC /* reddit-ios-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "reddit-ios-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CF3DD7F24531A0200E961DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CF3DD8124531A0200E961DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2CF3DD8324531A0200E961DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2CF3DD8624531A0200E961DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CF3DD8824531A0300E961DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CF3DD8B24531A0300E961DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CF3DD8D24531A0300E961DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CF3DD9224531A0300E961DC /* reddit-ios-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "reddit-ios-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CF3DD9624531A0300E961DC /* reddit_ios_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reddit_ios_testTests.swift; sourceTree = "<group>"; };
 		2CF3DD9824531A0300E961DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CF3DDA7245894A700E961DC /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
+		2CF3DDA9245894B000E961DC /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
+		2CF3DDAC245894C000E961DC /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		2CF3DDAE245894C700E961DC /* PostDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewModel.swift; sourceTree = "<group>"; };
+		2CF3DDB02458A2EC00E961DC /* PostListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostListViewController.xib; sourceTree = "<group>"; };
+		2CF3DDB2245A037E00E961DC /* PostDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailsViewController.xib; sourceTree = "<group>"; };
+		2CF3DDB5245B68EB00E961DC /* AppBootstrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBootstrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +89,11 @@
 		2CF3DD7E24531A0200E961DC /* reddit-ios-test */ = {
 			isa = PBXGroup;
 			children = (
+				2CF3DDB4245B68D100E961DC /* Services */,
+				2CF3DDA42458944700E961DC /* Model */,
+				2CF3DDA224531BE600E961DC /* Screens */,
 				2CF3DD7F24531A0200E961DC /* AppDelegate.swift */,
 				2CF3DD8124531A0200E961DC /* SceneDelegate.swift */,
-				2CF3DD8324531A0200E961DC /* ViewController.swift */,
-				2CF3DD8524531A0200E961DC /* Main.storyboard */,
 				2CF3DD8824531A0300E961DC /* Assets.xcassets */,
 				2CF3DD8A24531A0300E961DC /* LaunchScreen.storyboard */,
 				2CF3DD8D24531A0300E961DC /* Info.plist */,
@@ -97,6 +108,50 @@
 				2CF3DD9824531A0300E961DC /* Info.plist */,
 			);
 			path = "reddit-ios-testTests";
+			sourceTree = "<group>";
+		};
+		2CF3DDA124531BCD00E961DC /* List */ = {
+			isa = PBXGroup;
+			children = (
+				2CF3DDB02458A2EC00E961DC /* PostListViewController.xib */,
+				2CF3DDA7245894A700E961DC /* PostListViewController.swift */,
+				2CF3DDA9245894B000E961DC /* PostListViewModel.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		2CF3DDA224531BE600E961DC /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				2CF3DDA124531BCD00E961DC /* List */,
+				2CF3DDAB245894B400E961DC /* Details */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		2CF3DDA42458944700E961DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2CF3DDAB245894B400E961DC /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				2CF3DDB2245A037E00E961DC /* PostDetailsViewController.xib */,
+				2CF3DDAC245894C000E961DC /* PostDetailViewController.swift */,
+				2CF3DDAE245894C700E961DC /* PostDetailsViewModel.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		2CF3DDB4245B68D100E961DC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2CF3DDB5245B68EB00E961DC /* AppBootstrapper.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,9 +235,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF3DDB3245A037E00E961DC /* PostDetailsViewController.xib in Resources */,
 				2CF3DD8C24531A0300E961DC /* LaunchScreen.storyboard in Resources */,
+				2CF3DDB12458A2EC00E961DC /* PostListViewController.xib in Resources */,
 				2CF3DD8924531A0300E961DC /* Assets.xcassets in Resources */,
-				2CF3DD8724531A0200E961DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,9 +256,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CF3DD8424531A0200E961DC /* ViewController.swift in Sources */,
+				2CF3DDAD245894C000E961DC /* PostDetailViewController.swift in Sources */,
+				2CF3DDA8245894A700E961DC /* PostListViewController.swift in Sources */,
+				2CF3DDAA245894B000E961DC /* PostListViewModel.swift in Sources */,
 				2CF3DD8024531A0200E961DC /* AppDelegate.swift in Sources */,
+				2CF3DDAF245894C700E961DC /* PostDetailsViewModel.swift in Sources */,
 				2CF3DD8224531A0200E961DC /* SceneDelegate.swift in Sources */,
+				2CF3DDB6245B68EB00E961DC /* AppBootstrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,14 +285,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2CF3DD8524531A0200E961DC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CF3DD8624531A0200E961DC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2CF3DD8A24531A0300E961DC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
