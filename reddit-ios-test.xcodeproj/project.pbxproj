@@ -19,6 +19,7 @@
 		2CF3DDB12458A2EC00E961DC /* PostListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF3DDB02458A2EC00E961DC /* PostListViewController.xib */; };
 		2CF3DDB3245A037E00E961DC /* PostDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF3DDB2245A037E00E961DC /* PostDetailsViewController.xib */; };
 		2CF3DDB6245B68EB00E961DC /* AppBootstrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3DDB5245B68EB00E961DC /* AppBootstrapper.swift */; };
+		2CF3DDB8245B6D4600E961DC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3DDB7245B6D4600E961DC /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		2CF3DDB02458A2EC00E961DC /* PostListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostListViewController.xib; sourceTree = "<group>"; };
 		2CF3DDB2245A037E00E961DC /* PostDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailsViewController.xib; sourceTree = "<group>"; };
 		2CF3DDB5245B68EB00E961DC /* AppBootstrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBootstrapper.swift; sourceTree = "<group>"; };
+		2CF3DDB7245B6D4600E961DC /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		2CF3DDA42458944700E961DC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2CF3DDB7245B6D4600E961DC /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				2CF3DDAD245894C000E961DC /* PostDetailViewController.swift in Sources */,
 				2CF3DDA8245894A700E961DC /* PostListViewController.swift in Sources */,
 				2CF3DDAA245894B000E961DC /* PostListViewModel.swift in Sources */,
+				2CF3DDB8245B6D4600E961DC /* Post.swift in Sources */,
 				2CF3DD8024531A0200E961DC /* AppDelegate.swift in Sources */,
 				2CF3DDAF245894C700E961DC /* PostDetailsViewModel.swift in Sources */,
 				2CF3DD8224531A0200E961DC /* SceneDelegate.swift in Sources */,

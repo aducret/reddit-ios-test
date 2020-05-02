@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostListViewController" customModule="reddit_ios_test" customModuleProvider="target">
             <connections>
+                <outlet property="dismissButton" destination="oM3-kc-HaZ" id="VQI-os-pMC"/>
+                <outlet property="tableView" destination="9tt-Pp-vg3" id="ejv-hm-cBS"/>
                 <outlet property="view" destination="29I-XD-JRs" id="CJZ-7g-Ns6"/>
             </connections>
         </placeholder>
@@ -17,17 +19,24 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3L-qZ-zU5">
-                    <rect key="frame" x="193" y="437.5" width="28" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9tt-Pp-vg3">
+                    <rect key="frame" x="0.0" y="44" width="414" height="740"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oM3-kc-HaZ">
+                    <rect key="frame" x="40" y="816" width="334" height="30"/>
+                    <state key="normal" title="{Dismiss Button}"/>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="R3L-qZ-zU5" firstAttribute="centerX" secondItem="29I-XD-JRs" secondAttribute="centerX" id="kEE-h5-gKz"/>
-                <constraint firstItem="R3L-qZ-zU5" firstAttribute="centerY" secondItem="29I-XD-JRs" secondAttribute="centerY" id="zPR-xE-VrE"/>
+                <constraint firstItem="fH5-Ik-U7M" firstAttribute="trailing" secondItem="oM3-kc-HaZ" secondAttribute="trailing" constant="40" id="AeF-5g-0PI"/>
+                <constraint firstItem="oM3-kc-HaZ" firstAttribute="leading" secondItem="fH5-Ik-U7M" secondAttribute="leading" constant="40" id="Fwp-ZQ-iH5"/>
+                <constraint firstItem="oM3-kc-HaZ" firstAttribute="top" secondItem="9tt-Pp-vg3" secondAttribute="bottom" constant="32" id="RLV-5A-U4o"/>
+                <constraint firstItem="fH5-Ik-U7M" firstAttribute="bottom" secondItem="oM3-kc-HaZ" secondAttribute="bottom" constant="16" id="Y10-E6-lsE"/>
+                <constraint firstItem="9tt-Pp-vg3" firstAttribute="leading" secondItem="fH5-Ik-U7M" secondAttribute="leading" id="cMU-gL-v4f"/>
+                <constraint firstItem="9tt-Pp-vg3" firstAttribute="top" secondItem="fH5-Ik-U7M" secondAttribute="top" id="dfS-zR-B3O"/>
+                <constraint firstItem="fH5-Ik-U7M" firstAttribute="trailing" secondItem="9tt-Pp-vg3" secondAttribute="trailing" id="pgr-4I-xXd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fH5-Ik-U7M"/>
             <point key="canvasLocation" x="-204" y="94"/>

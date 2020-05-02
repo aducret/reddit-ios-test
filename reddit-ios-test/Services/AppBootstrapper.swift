@@ -11,7 +11,8 @@ import UIKit
 struct AppBootstrapper {
 
     static func bootstrap(window: UIWindow) {
-        let postListViewController = PostListViewController(nibName: "PostListViewController", bundle: nil)
+        let postListViewModel = PostListViewModel(posts: [Post(title: "Post 1"), Post(title: "Post 2"), Post(title: "Post 3")])
+        let postListViewController = PostListViewController(viewModel: postListViewModel)
         let postDetailsViewController = PostDetailsViewController(nibName: "PostDetailsViewController", bundle: nil)
         let splitViewController = UISplitViewController()
         splitViewController.viewControllers = [postListViewController, postDetailsViewController]

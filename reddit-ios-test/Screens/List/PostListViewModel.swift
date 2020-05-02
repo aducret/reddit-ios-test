@@ -6,3 +6,8 @@
 //  Copyright © 2020 Argentino Ducret. All rights reserved.
 //
 
+struct PostListViewModel {
+
+    let posts: [Post]
+
+}
