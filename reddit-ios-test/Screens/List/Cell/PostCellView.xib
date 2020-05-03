@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PostCellView" customModule="reddit_ios_test" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="254"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgF-Jr-JXk">
+                    <rect key="frame" x="30" y="16" width="33.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="TimeAgo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHo-EM-82n">
+                    <rect key="frame" x="330" y="16" width="68" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zzp-wj-4oT">
+                    <rect key="frame" x="16" y="52.5" width="382" height="103.5"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9N9-JJ-tVk">
+                            <rect key="frame" x="0.0" y="0.0" width="103.5" height="103.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="9N9-JJ-tVk" secondAttribute="height" multiplier="1:1" id="Jeg-lR-c11"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBt-ij-99q">
+                            <rect key="frame" x="111.5" y="0.0" width="270.5" height="103.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="250" constant="80" id="GcH-z9-d4W"/>
+                    </constraints>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWf-2l-HIJ">
+                    <rect key="frame" x="8" y="8" width="14" height="14"/>
+                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="f51-vQ-oKx"/>
+                        <constraint firstAttribute="width" constant="14" id="gbG-JT-Rza"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNN-F1-v05">
+                    <rect key="frame" x="16" y="176" width="138.5" height="66"/>
+                    <state key="normal" title="{Dismiss Post}" image="delete.right" catalog="system">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lje-Rr-f0c">
+                    <rect key="frame" x="314.5" y="176" width="83.5" height="66"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="Lje-Rr-f0c" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FNN-F1-v05" secondAttribute="trailing" constant="16" id="0sh-5b-emL"/>
+                <constraint firstItem="zzp-wj-4oT" firstAttribute="top" secondItem="AHo-EM-82n" secondAttribute="bottom" constant="16" id="2gF-jN-Z78"/>
+                <constraint firstItem="qgF-Jr-JXk" firstAttribute="leading" secondItem="rWf-2l-HIJ" secondAttribute="trailing" constant="8" id="8zq-kd-oIt"/>
+                <constraint firstAttribute="trailing" secondItem="AHo-EM-82n" secondAttribute="trailing" constant="16" id="Cbg-aR-kQo"/>
+                <constraint firstItem="zzp-wj-4oT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="DMZ-Sh-8Sf"/>
+                <constraint firstItem="AHo-EM-82n" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qgF-Jr-JXk" secondAttribute="trailing" constant="8" id="MAF-k4-wQF"/>
+                <constraint firstItem="FNN-F1-v05" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="PEb-GM-mf1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="FNN-F1-v05" secondAttribute="bottom" constant="12" id="Po9-W8-bhE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zzp-wj-4oT" secondAttribute="trailing" constant="16" id="R7e-JH-MAt"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Lje-Rr-f0c" secondAttribute="trailing" constant="16" id="aZk-xA-AO0"/>
+                <constraint firstItem="Lje-Rr-f0c" firstAttribute="top" secondItem="zzp-wj-4oT" secondAttribute="bottom" constant="20" id="d6O-dQ-Ife"/>
+                <constraint firstItem="rWf-2l-HIJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="dSJ-FG-iOx"/>
+                <constraint firstItem="qgF-Jr-JXk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="eqA-al-WYs"/>
+                <constraint firstItem="9N9-JJ-tVk" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.25" id="fn7-fP-JHL"/>
+                <constraint firstItem="AHo-EM-82n" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="jnt-dm-aXn"/>
+                <constraint firstItem="rWf-2l-HIJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="mB2-zo-N1d"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Lje-Rr-f0c" secondAttribute="bottom" constant="12" id="rFb-PD-bWL"/>
+                <constraint firstItem="FNN-F1-v05" firstAttribute="top" secondItem="zzp-wj-4oT" secondAttribute="bottom" constant="20" id="wy2-we-uZh"/>
+                <constraint firstItem="zzp-wj-4oT" firstAttribute="top" secondItem="qgF-Jr-JXk" secondAttribute="bottom" constant="16" id="zIL-ig-TWM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="commentsLabel" destination="Lje-Rr-f0c" id="zkX-Nh-iob"/>
+                <outlet property="dismissButton" destination="FNN-F1-v05" id="0jc-Go-ARF"/>
+                <outlet property="postImageView" destination="9N9-JJ-tVk" id="0eZ-OK-dzf"/>
+                <outlet property="subtitleLabel" destination="wBt-ij-99q" id="mAh-R7-PrO"/>
+                <outlet property="timeAgoLabel" destination="AHo-EM-82n" id="bAQ-aG-UQ8"/>
+                <outlet property="titleLabel" destination="qgF-Jr-JXk" id="Nzp-b7-Qln"/>
+                <outlet property="unreadView" destination="rWf-2l-HIJ" id="tzZ-se-KoY"/>
+            </connections>
+            <point key="canvasLocation" x="-243.47826086956525" y="-56.25"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="delete.right" catalog="system" width="128" height="104"/>
+    </resources>
+</document>

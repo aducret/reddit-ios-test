@@ -6,3 +6,10 @@
 //  Copyright © 2020 Argentino Ducret. All rights reserved.
 //
 
+final class PostDetailsViewModel {
+
+    init(post: Post) {
+
+    }
+
+}

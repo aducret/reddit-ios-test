@@ -6,8 +6,59 @@
 //  Copyright © 2020 Argentino Ducret. All rights reserved.
 //
 
-struct PostListViewModel {
+import Foundation
 
-    let posts: [Post]
+final class PostListViewModel {
+
+    var didUpdate: ((PostListViewModel) -> Void)?
+    var didError: ((Error) -> Void)?
+
+    private(set) var cellViewModels: [PostCellViewModel] = []
+
+    private var posts: [Post] = []
+
+    init() {
+        setupViewModel()
+    }
+
+    func didSelect(index: Int) {
+        guard let post = cellViewModels[safe: index] else { return }
+        post.didSelect()
+    }
+
+    func createDetailViewModel(index: Int) -> PostDetailsViewModel? {
+        guard let post = posts[safe: index] else { return nil }
+
+        return PostDetailsViewModel(post: post)
+    }
+}
+
+// MARK: - Private
+private extension PostListViewModel {
+
+    func setupViewModel() {
+        let url = URL(string: "https://www.reddit.com/r/all/.json")!
+
+        let task = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+            guard
+                let data = data,
+                let strongSelf = self
+            else { return }
+
+            print(String(data: data, encoding: .utf8)!)
+
+            let decoder = JSONDecoder()
+            do {
+                strongSelf.posts = try decoder.decode(Tops.self, from: data).posts
+                strongSelf.cellViewModels = strongSelf.posts.map(PostCellViewModel.init)
+                strongSelf.didUpdate?(strongSelf)
+            } catch(let error) {
+                print("Error: \(error)")
+                strongSelf.didError?(error)
+            }
+        }
+
+        task.resume()
+    }
 
 }

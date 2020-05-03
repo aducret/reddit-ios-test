@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CD6D4C9245DDC5800F3A70B /* PostCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD6D4C8245DDC5800F3A70B /* PostCellView.xib */; };
+		2CD6D4CB245DDC6900F3A70B /* PostCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6D4CA245DDC6900F3A70B /* PostCellView.swift */; };
+		2CD6D4CD245DDC7100F3A70B /* PostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6D4CC245DDC7100F3A70B /* PostCellViewModel.swift */; };
+		2CD6D4D1245F251F00F3A70B /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6D4D0245F251F00F3A70B /* DateExtension.swift */; };
+		2CD6D4D3245F254000F3A70B /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6D4D2245F254000F3A70B /* ArrayExtension.swift */; };
+		2CD6D4D5245F577800F3A70B /* Tops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6D4D4245F577800F3A70B /* Tops.swift */; };
+		2CD6D4D7245F867600F3A70B /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6D4D6245F867600F3A70B /* ImageViewExtension.swift */; };
 		2CF3DD8024531A0200E961DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3DD7F24531A0200E961DC /* AppDelegate.swift */; };
 		2CF3DD8224531A0200E961DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3DD8124531A0200E961DC /* SceneDelegate.swift */; };
 		2CF3DD8924531A0300E961DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CF3DD8824531A0300E961DC /* Assets.xcassets */; };
@@ -33,6 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2CD6D4C8245DDC5800F3A70B /* PostCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCellView.xib; sourceTree = "<group>"; };
+		2CD6D4CA245DDC6900F3A70B /* PostCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellView.swift; sourceTree = "<group>"; };
+		2CD6D4CC245DDC7100F3A70B /* PostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellViewModel.swift; sourceTree = "<group>"; };
+		2CD6D4D0245F251F00F3A70B /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		2CD6D4D2245F254000F3A70B /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		2CD6D4D4245F577800F3A70B /* Tops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tops.swift; sourceTree = "<group>"; };
+		2CD6D4D6245F867600F3A70B /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 		2CF3DD7C24531A0200E961DC /* reddit-ios-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "reddit-ios-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CF3DD7F24531A0200E961DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CF3DD8124531A0200E961DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +84,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CD6D4CE245DDC7800F3A70B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2CD6D4C8245DDC5800F3A70B /* PostCellView.xib */,
+				2CD6D4CA245DDC6900F3A70B /* PostCellView.swift */,
+				2CD6D4CC245DDC7100F3A70B /* PostCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2CD6D4CF245F251500F3A70B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2CD6D4D0245F251F00F3A70B /* DateExtension.swift */,
+				2CD6D4D2245F254000F3A70B /* ArrayExtension.swift */,
+				2CD6D4D6245F867600F3A70B /* ImageViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		2CF3DD7324531A0200E961DC = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				2CF3DDB4245B68D100E961DC /* Services */,
+				2CD6D4CF245F251500F3A70B /* Extensions */,
 				2CF3DDA42458944700E961DC /* Model */,
 				2CF3DDA224531BE600E961DC /* Screens */,
 				2CF3DD7F24531A0200E961DC /* AppDelegate.swift */,
@@ -118,6 +153,7 @@
 				2CF3DDB02458A2EC00E961DC /* PostListViewController.xib */,
 				2CF3DDA7245894A700E961DC /* PostListViewController.swift */,
 				2CF3DDA9245894B000E961DC /* PostListViewModel.swift */,
+				2CD6D4CE245DDC7800F3A70B /* Cell */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -134,6 +170,7 @@
 		2CF3DDA42458944700E961DC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2CD6D4D4245F577800F3A70B /* Tops.swift */,
 				2CF3DDB7245B6D4600E961DC /* Post.swift */,
 			);
 			path = Model;
@@ -240,6 +277,7 @@
 			files = (
 				2CF3DDB3245A037E00E961DC /* PostDetailsViewController.xib in Resources */,
 				2CF3DD8C24531A0300E961DC /* LaunchScreen.storyboard in Resources */,
+				2CD6D4C9245DDC5800F3A70B /* PostCellView.xib in Resources */,
 				2CF3DDB12458A2EC00E961DC /* PostListViewController.xib in Resources */,
 				2CF3DD8924531A0300E961DC /* Assets.xcassets in Resources */,
 			);
@@ -262,11 +300,17 @@
 				2CF3DDAD245894C000E961DC /* PostDetailViewController.swift in Sources */,
 				2CF3DDA8245894A700E961DC /* PostListViewController.swift in Sources */,
 				2CF3DDAA245894B000E961DC /* PostListViewModel.swift in Sources */,
+				2CD6D4D3245F254000F3A70B /* ArrayExtension.swift in Sources */,
 				2CF3DDB8245B6D4600E961DC /* Post.swift in Sources */,
 				2CF3DD8024531A0200E961DC /* AppDelegate.swift in Sources */,
 				2CF3DDAF245894C700E961DC /* PostDetailsViewModel.swift in Sources */,
+				2CD6D4D1245F251F00F3A70B /* DateExtension.swift in Sources */,
+				2CD6D4D7245F867600F3A70B /* ImageViewExtension.swift in Sources */,
+				2CD6D4CB245DDC6900F3A70B /* PostCellView.swift in Sources */,
 				2CF3DD8224531A0200E961DC /* SceneDelegate.swift in Sources */,
+				2CD6D4CD245DDC7100F3A70B /* PostCellViewModel.swift in Sources */,
 				2CF3DDB6245B68EB00E961DC /* AppBootstrapper.swift in Sources */,
+				2CD6D4D5245F577800F3A70B /* Tops.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
