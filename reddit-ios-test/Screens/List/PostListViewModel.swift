@@ -14,6 +14,7 @@ final class PostListViewModel {
     var didError: ((Error) -> Void)?
     let title = "Reddit Posts"
     private(set) var cellViewModels: [PostCellViewModel] = []
+    var isLoading: Bool = false
 
     private let redditService: RedditServiceProtocol
 
@@ -43,13 +44,39 @@ final class PostListViewModel {
     }
 
     func fetchPosts() {
-        redditService.fetchPosts(handlePosts: { [weak self] posts in
-            guard let strongSelf = self else { return }
+        isLoading = true
 
-            strongSelf.cellViewModels = posts.map(PostCellViewModel.init)
-            strongSelf.didUpdate?(strongSelf)
-        }, handleError: { [weak self] error in
-            self?.didError?(error)
+        redditService.fetchPosts(
+            count: 0,
+            before: nil,
+            handlePosts: { [weak self] posts in
+                self?.isLoading = false
+                guard let strongSelf = self else { return }
+
+                strongSelf.cellViewModels = posts.map(PostCellViewModel.init)
+                strongSelf.didUpdate?(strongSelf)
+            }, handleError: { [weak self] error in
+                self?.isLoading = false
+                self?.didError?(error)
+        })
+    }
+
+    func nextPage() {
+        isLoading = true
+
+        redditService.fetchPosts(
+            count: cellViewModels.count,
+            before: cellViewModels.last?.post.id,
+            handlePosts: { [weak self] posts in
+                self?.isLoading = false
+                guard let strongSelf = self else { return }
+
+                let newPosts = posts.map(PostCellViewModel.init)
+                strongSelf.cellViewModels.append(contentsOf: newPosts)
+                strongSelf.didUpdate?(strongSelf)
+            }, handleError: { [weak self] error in
+                self?.isLoading = false
+                self?.didError?(error)
         })
     }
 }

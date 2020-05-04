@@ -69,6 +69,13 @@ extension PostListViewController: UITableViewDelegate, UITableViewDataSource {
         viewModel.didSelect(index: indexPath.row)
     }
 
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let offset = 3
+        if !viewModel.isLoading && indexPath.row >= viewModel.cellViewModels.count - offset {
+            viewModel.nextPage()
+        }
+    }
+
 }
 
 // MARK: - UISplitViewControllerDelegate

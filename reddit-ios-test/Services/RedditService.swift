@@ -10,14 +10,28 @@ import Foundation
 
 protocol RedditServiceProtocol {
 
-    func fetchPosts(handlePosts: @escaping ([Post]) -> Void, handleError: @escaping (Error) -> Void)
+    func fetchPosts(count: Int, before: String?, limit: Int, handlePosts: @escaping ([Post]) -> Void, handleError: @escaping (Error) -> Void)
+
+}
+
+extension RedditServiceProtocol {
+
+    func fetchPosts(count: Int, before: String?, handlePosts: @escaping ([Post]) -> Void, handleError: @escaping (Error) -> Void) {
+        fetchPosts(count: count, before: before, limit: 20, handlePosts: handlePosts, handleError: handleError)
+    }
 
 }
 
 struct RedditService: RedditServiceProtocol {
 
-    func fetchPosts(handlePosts: @escaping ([Post]) -> Void, handleError: @escaping (Error) -> Void) {
-        let url = URL(string: "https://www.reddit.com/r/all/.json")!
+    func fetchPosts(count: Int, before: String?, limit: Int, handlePosts: @escaping ([Post]) -> Void, handleError: @escaping (Error) -> Void) {
+        var urlString = "https://www.reddit.com/r/all/.json?limit=\(limit)"
+
+        if let before = before {
+            urlString += "&after=t3_\(before)&count=\(count)"
+        }
+
+        let url = URL(string: urlString)!
 
         let task = URLSession.shared.dataTask(with: url) { (data, _, error) in
             guard let data = data else { return }
