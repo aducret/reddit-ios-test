@@ -28,7 +28,7 @@ final class PostListViewController: UIViewController {
         super.viewDidLoad()
 
         setupView()
-        setupViewModel()
+        setupBindings()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -85,7 +85,9 @@ extension PostListViewController: UISplitViewControllerDelegate {
 // MARK: - Private
 private extension PostListViewController {
 
-    func setupViewModel() {
+    func setupBindings() {
+        viewModel.fetchPosts()
+
         viewModel.didUpdate = { [weak self] _ in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
@@ -109,6 +111,15 @@ private extension PostListViewController {
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "PostCellView", bundle: nil), forCellReuseIdentifier: "PostCellView")
         dismissButton.addTarget(self, action: #selector(dismissAll), for: .touchUpInside)
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshPosts), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+    }
+
+    @objc
+    func refreshPosts(refreshControl: UIRefreshControl) {
+        refreshControl.endRefreshing()
+        viewModel.fetchPosts()
     }
 
     @objc

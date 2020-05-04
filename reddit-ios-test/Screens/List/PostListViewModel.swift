@@ -15,8 +15,10 @@ final class PostListViewModel {
     let title = "Reddit Posts"
     private(set) var cellViewModels: [PostCellViewModel] = []
 
-    init() {
-        setupViewModel()
+    private let redditService: RedditServiceProtocol
+
+    init(redditService: RedditServiceProtocol = RedditService()) {
+        self.redditService = redditService
     }
 
     func didSelect(index: Int) {
@@ -39,34 +41,15 @@ final class PostListViewModel {
     func dismissAll() {
         cellViewModels = []
     }
-}
 
-// MARK: - Private
-private extension PostListViewModel {
+    func fetchPosts() {
+        redditService.fetchPosts(handlePosts: { [weak self] posts in
+            guard let strongSelf = self else { return }
 
-    func setupViewModel() {
-        let url = URL(string: "https://www.reddit.com/r/all/.json")!
-
-        let task = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
-            guard
-                let data = data,
-                let strongSelf = self
-            else { return }
-
-            print(String(data: data, encoding: .utf8)!)
-
-            let decoder = JSONDecoder()
-            do {
-                let posts = try decoder.decode(Tops.self, from: data).posts
-                strongSelf.cellViewModels = posts.map(PostCellViewModel.init)
-                strongSelf.didUpdate?(strongSelf)
-            } catch(let error) {
-                print("Error: \(error)")
-                strongSelf.didError?(error)
-            }
-        }
-
-        task.resume()
+            strongSelf.cellViewModels = posts.map(PostCellViewModel.init)
+            strongSelf.didUpdate?(strongSelf)
+        }, handleError: { [weak self] error in
+            self?.didError?(error)
+        })
     }
-
 }
