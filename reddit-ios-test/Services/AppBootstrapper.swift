@@ -15,7 +15,8 @@ struct AppBootstrapper {
         let postListViewController = PostListViewController(viewModel: postListViewModel)
         let postListNavigationController = UINavigationController(rootViewController: postListViewController)
 
-        let postDetailsViewController = PostDetailsViewController(nibName: "PostDetailsViewController", bundle: nil)
+        let postDetailsViewModel = PostDetailsViewModel(post: nil)
+        let postDetailsViewController = PostDetailsViewController(viewModel: postDetailsViewModel)
         let postDetailsNavigationController = UINavigationController(rootViewController: postDetailsViewController)
 
         let splitViewController = UISplitViewController()

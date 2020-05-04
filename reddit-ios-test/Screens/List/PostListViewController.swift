@@ -62,8 +62,8 @@ extension PostListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let postDetailsViewModel = viewModel.createDetailViewModel(index: indexPath.row) else { return }
-        let postDetailsViewController = PostDetailsViewController(nibName: "PostDetailsViewController", bundle: nil)
+        guard let postDetailsViewModel = viewModel.createDetailViewModel(index: indexPath.row) else { return }
+        let postDetailsViewController = PostDetailsViewController(viewModel: postDetailsViewModel)
         splitViewController?.showDetailViewController(postDetailsViewController, sender: nil)
 
         viewModel.didSelect(index: indexPath.row)

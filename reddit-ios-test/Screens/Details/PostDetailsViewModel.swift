@@ -6,10 +6,17 @@
 //  Copyright © 2020 Argentino Ducret. All rights reserved.
 //
 
-final class PostDetailsViewModel {
+import Foundation
 
-    init(post: Post) {
+struct PostDetailsViewModel {
 
+    let author: String?
+    let title: String?
+    let postImageURL: URL?
+
+    init(post: Post?) {
+        author = post?.author
+        title = post?.title
+        postImageURL = post?.image
     }
-
 }

@@ -9,6 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostDetailsViewController" customModule="reddit_ios_test" customModuleProvider="target">
             <connections>
+                <outlet property="authorLabel" destination="1DP-t2-KUB" id="le0-kG-hKW"/>
+                <outlet property="postImageView" destination="Byx-XJ-u6z" id="epD-IT-qXR"/>
+                <outlet property="titleLabel" destination="Udt-Qr-MiV" id="gDQ-si-nCb"/>
                 <outlet property="view" destination="1mQ-Gg-B9z" id="6XL-yJ-QFI"/>
             </connections>
         </placeholder>
@@ -17,17 +20,39 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhO-7k-cwS">
-                    <rect key="frame" x="180.5" y="437.5" width="53" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1DP-t2-KUB">
+                    <rect key="frame" x="16" y="60" width="52" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Udt-Qr-MiV">
+                    <rect key="frame" x="16" y="393.5" width="33.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Byx-XJ-u6z">
+                    <rect key="frame" x="83" y="113" width="248" height="248.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Byx-XJ-u6z" secondAttribute="height" multiplier="1:1" id="ibO-FF-VGh"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="zhO-7k-cwS" firstAttribute="centerY" secondItem="1mQ-Gg-B9z" secondAttribute="centerY" id="fg3-Gz-hUp"/>
-                <constraint firstItem="zhO-7k-cwS" firstAttribute="centerX" secondItem="1mQ-Gg-B9z" secondAttribute="centerX" id="pB1-eN-yh5"/>
+                <constraint firstItem="Byx-XJ-u6z" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rL8-ky-CLg" secondAttribute="leading" constant="32" id="0SC-Yb-TwK"/>
+                <constraint firstItem="rL8-ky-CLg" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Byx-XJ-u6z" secondAttribute="trailing" constant="32" id="1xV-fF-sng"/>
+                <constraint firstItem="Byx-XJ-u6z" firstAttribute="centerX" secondItem="1mQ-Gg-B9z" secondAttribute="centerX" id="5NB-1a-2rB"/>
+                <constraint firstItem="1DP-t2-KUB" firstAttribute="top" secondItem="rL8-ky-CLg" secondAttribute="top" constant="16" id="9h7-eI-utb"/>
+                <constraint firstItem="1DP-t2-KUB" firstAttribute="leading" secondItem="rL8-ky-CLg" secondAttribute="leading" constant="16" id="KAW-fp-2oK"/>
+                <constraint firstItem="Byx-XJ-u6z" firstAttribute="width" secondItem="1mQ-Gg-B9z" secondAttribute="width" multiplier="0.6" id="Kf8-qT-bjE"/>
+                <constraint firstItem="rL8-ky-CLg" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1DP-t2-KUB" secondAttribute="trailing" constant="16" id="TsC-F3-5pi"/>
+                <constraint firstItem="rL8-ky-CLg" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Udt-Qr-MiV" secondAttribute="trailing" constant="16" id="cmh-Sn-nsZ"/>
+                <constraint firstItem="Udt-Qr-MiV" firstAttribute="leading" secondItem="rL8-ky-CLg" secondAttribute="leading" constant="16" id="dxh-9H-mtk"/>
+                <constraint firstItem="Byx-XJ-u6z" firstAttribute="top" secondItem="1DP-t2-KUB" secondAttribute="bottom" constant="32" id="dzM-Tj-5iF"/>
+                <constraint firstItem="Udt-Qr-MiV" firstAttribute="top" secondItem="Byx-XJ-u6z" secondAttribute="bottom" constant="32" id="qdr-UV-fes"/>
+                <constraint firstItem="rL8-ky-CLg" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Udt-Qr-MiV" secondAttribute="bottom" constant="32" id="vHq-2g-rNT"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="rL8-ky-CLg"/>
             <point key="canvasLocation" x="493" y="92"/>
