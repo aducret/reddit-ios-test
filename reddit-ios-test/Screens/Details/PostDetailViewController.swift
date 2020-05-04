@@ -49,6 +49,17 @@ private extension PostDetailsViewController {
     func setupView() {
         authorLabel.font = UIFont.boldSystemFont(ofSize: 16)
         titleLabel.font = UIFont.systemFont(ofSize: 14)
+        let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(imageTapped))
+        postImageView.isUserInteractionEnabled = true
+        postImageView.addGestureRecognizer(tapGesture)
+    }
+
+    @objc
+    func imageTapped() {
+        guard let image = postImageView.image else { return }
+
+        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        present(activityViewController, animated: true)
     }
 
 }
