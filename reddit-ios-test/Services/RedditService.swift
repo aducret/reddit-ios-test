@@ -10,25 +10,25 @@ import Foundation
 
 protocol RedditServiceProtocol {
 
-    func fetchPosts(count: Int, before: String?, limit: Int, handlePosts: @escaping ([Post]) -> Void, handleError: @escaping (Error) -> Void)
+    func fetchPosts(count: Int, after: String?, limit: Int, handlePosts: @escaping ([Post]) -> Void, handleError: @escaping (Error) -> Void)
 
 }
 
 extension RedditServiceProtocol {
 
-    func fetchPosts(count: Int, before: String?, handlePosts: @escaping ([Post]) -> Void, handleError: @escaping (Error) -> Void) {
-        fetchPosts(count: count, before: before, limit: 20, handlePosts: handlePosts, handleError: handleError)
+    func fetchPosts(count: Int, after: String?, handlePosts: @escaping ([Post]) -> Void, handleError: @escaping (Error) -> Void) {
+        fetchPosts(count: count, after: after, limit: 20, handlePosts: handlePosts, handleError: handleError)
     }
 
 }
 
 struct RedditService: RedditServiceProtocol {
 
-    func fetchPosts(count: Int, before: String?, limit: Int, handlePosts: @escaping ([Post]) -> Void, handleError: @escaping (Error) -> Void) {
+    func fetchPosts(count: Int, after: String?, limit: Int, handlePosts: @escaping ([Post]) -> Void, handleError: @escaping (Error) -> Void) {
         var urlString = "https://www.reddit.com/r/all/.json?limit=\(limit)"
 
-        if let before = before {
-            urlString += "&after=t3_\(before)&count=\(count)"
+        if let after = after {
+            urlString += "&after=t3_\(after)&count=\(count)"
         }
 
         let url = URL(string: urlString)!

@@ -109,6 +109,7 @@ private extension PostListViewController {
         }
 
         title = viewModel.title
+        dismissButton.setTitle(viewModel.dismissButtonTitle, for: .normal)
     }
 
     func setupView() {

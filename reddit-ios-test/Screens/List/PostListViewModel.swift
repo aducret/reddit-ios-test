@@ -15,6 +15,7 @@ final class PostListViewModel {
     let title = "Reddit Posts"
     private(set) var cellViewModels: [PostCellViewModel] = []
     var isLoading: Bool = false
+    let dismissButtonTitle = "Dismiss All"
 
     private let redditService: RedditServiceProtocol
 
@@ -48,7 +49,7 @@ final class PostListViewModel {
 
         redditService.fetchPosts(
             count: 0,
-            before: nil,
+            after: nil,
             handlePosts: { [weak self] posts in
                 self?.isLoading = false
                 guard let strongSelf = self else { return }
@@ -66,7 +67,7 @@ final class PostListViewModel {
 
         redditService.fetchPosts(
             count: cellViewModels.count,
-            before: cellViewModels.last?.post.id,
+            after: cellViewModels.last?.post.id,
             handlePosts: { [weak self] posts in
                 self?.isLoading = false
                 guard let strongSelf = self else { return }
