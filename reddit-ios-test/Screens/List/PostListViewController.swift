@@ -54,12 +54,15 @@ extension PostListViewController: UITableViewDelegate, UITableViewDataSource {
         else { return UITableViewCell() }
 
         cell.setup(with: cellViewModel)
+        cellViewModel.didDismiss = { [weak self] in
+            self?.dismiss(post: cellViewModel.post)
+        }
 
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let postDetailsViewModel = viewModel.createDetailViewModel(index: indexPath.row) else { return }
+//        guard let postDetailsViewModel = viewModel.createDetailViewModel(index: indexPath.row) else { return }
         let postDetailsViewController = PostDetailsViewController(nibName: "PostDetailsViewController", bundle: nil)
         splitViewController?.showDetailViewController(postDetailsViewController, sender: nil)
 
@@ -79,7 +82,6 @@ extension PostListViewController: UISplitViewControllerDelegate {
 
 }
 
-
 // MARK: - Private
 private extension PostListViewController {
 
@@ -96,6 +98,8 @@ private extension PostListViewController {
             let alert = UIAlertController(title: "Ups! There was an error", message: "error: \(error)", preferredStyle: .alert)
             alert.show(strongSelf, sender: nil)
         }
+
+        title = viewModel.title
     }
 
     func setupView() {
@@ -104,6 +108,24 @@ private extension PostListViewController {
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "PostCellView", bundle: nil), forCellReuseIdentifier: "PostCellView")
+        dismissButton.addTarget(self, action: #selector(dismissAll), for: .touchUpInside)
+    }
+
+    @objc
+    func dismissAll() {
+        tableView.beginUpdates()
+        let indexes = (0..<viewModel.cellViewModels.count).map { IndexPath(row: $0, section: 0) }
+        tableView.deleteRows(at: indexes, with: .fade)
+        viewModel.dismissAll()
+        tableView.endUpdates()
+    }
+
+    func dismiss(post: Post) {
+        tableView.beginUpdates()
+        if let row = viewModel.dismiss(post: post) {
+            tableView.deleteRows(at: [IndexPath(row: row, section: 0)], with: .fade)
+        }
+        tableView.endUpdates()
     }
 
 }

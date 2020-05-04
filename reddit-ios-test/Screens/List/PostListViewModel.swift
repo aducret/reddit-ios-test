@@ -12,10 +12,8 @@ final class PostListViewModel {
 
     var didUpdate: ((PostListViewModel) -> Void)?
     var didError: ((Error) -> Void)?
-
+    let title = "Reddit Posts"
     private(set) var cellViewModels: [PostCellViewModel] = []
-
-    private var posts: [Post] = []
 
     init() {
         setupViewModel()
@@ -27,9 +25,19 @@ final class PostListViewModel {
     }
 
     func createDetailViewModel(index: Int) -> PostDetailsViewModel? {
-        guard let post = posts[safe: index] else { return nil }
+        guard let post = cellViewModels[safe: index]?.post else { return nil }
 
         return PostDetailsViewModel(post: post)
+    }
+
+    func dismiss(post: Post) -> Int? {
+        guard let index = cellViewModels.firstIndex(where: { $0.post.id == post.id }) else { return nil }
+        cellViewModels.remove(at: index)
+        return index
+    }
+
+    func dismissAll() {
+        cellViewModels = []
     }
 }
 
@@ -49,8 +57,8 @@ private extension PostListViewModel {
 
             let decoder = JSONDecoder()
             do {
-                strongSelf.posts = try decoder.decode(Tops.self, from: data).posts
-                strongSelf.cellViewModels = strongSelf.posts.map(PostCellViewModel.init)
+                let posts = try decoder.decode(Tops.self, from: data).posts
+                strongSelf.cellViewModels = posts.map(PostCellViewModel.init)
                 strongSelf.didUpdate?(strongSelf)
             } catch(let error) {
                 print("Error: \(error)")

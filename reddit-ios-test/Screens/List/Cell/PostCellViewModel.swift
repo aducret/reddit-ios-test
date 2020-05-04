@@ -11,6 +11,7 @@ import Foundation
 final class PostCellViewModel {
 
     var didUpdate: ((PostCellViewModel) -> Void)?
+    var didDismiss: (() -> Void)?
 
     let title: String
     let subtitle: String
@@ -19,8 +20,10 @@ final class PostCellViewModel {
     let comments: String
     let timeAgo: String
     let dismissButton: String
+    let post: Post
 
     init(post: Post) {
+        self.post = post
         title = post.author
         subtitle = post.title
         imageURL = post.image

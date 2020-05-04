@@ -17,7 +17,9 @@ final class PostCellView: UITableViewCell {
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var commentsLabel: UILabel!
     @IBOutlet weak var timeAgoLabel: UILabel!
-    
+
+    private var viewModel: PostCellViewModel?
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -25,6 +27,8 @@ final class PostCellView: UITableViewCell {
     }
 
     func setup(with viewModel: PostCellViewModel) {
+        self.viewModel = viewModel
+
         unreadView.isHidden = !viewModel.isUnread
         titleLabel.text = viewModel.title
         subtitleLabel.text = viewModel.subtitle
@@ -59,6 +63,12 @@ private extension PostCellView {
         dismissButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         timeAgoLabel.font = UIFont.systemFont(ofSize: 12)
         postImageView.contentMode = .scaleToFill
+        dismissButton.addTarget(self, action: #selector(dismissPost), for: .touchUpInside)
+    }
+
+    @objc
+    func dismissPost() {
+        viewModel?.didDismiss?()
     }
 
 }
